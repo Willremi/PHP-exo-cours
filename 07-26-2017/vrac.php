@@ -139,3 +139,96 @@ if($i < 10){
 }
 
 echo "<br />\n";
+
+$age = random_int(12, 25);
+$abonne = random_int(0, 1);
+
+// déterminez si un utilisateur a droit ou non d'accéder à une ressource :
+// - non si l'utilisateur a moins de 16 ans
+// - non si l'utilisateur a 16 ou plus mais qu'il n'est pas abonné
+// - oui si l'utlisateur a 16 ou plus et qu'il est abonné
+
+echo "Age : " . $age;
+echo "<br />\n";
+echo "abonné : " . $abonne;
+echo "<br />\n";
+
+if($age < 16){
+  echo "accès refusé (âge < 16)\n";
+} else if($age >= 16 && $abonne == 0) {
+  echo "accès refusé car vous devez être abonné.\n";
+} else if($age >= 16 && $abonne == 1) {
+  echo "accès autorisé.\n";
+}
+
+
+echo "<br />\n";
+
+$scoreJoueur1 = random_int(0, 100);
+$scoreJoueur2 = random_int(0, 100);
+
+echo "Joueur 1 : " . $scoreJoueur1 . "\n";
+echo "et Joueur 2 : " . $scoreJoueur2;
+
+echo "<br />\n";
+// si au moins un des deux joueurs a un score plus grand que 50
+// les joueurs peuvent passer au niveau supérieur
+// sinon : game over
+
+if($scoreJoueur1 > 50 || $scoreJoueur2 > 50) {
+  echo "Joueur 1 et 2 peuvent passer au niveau suivant";
+} else {
+  echo "GAME OVER !!!";
+}
+
+echo "<br />\n";
+
+$scoreJoueur1 = random_int(0, 100);
+$scoreJoueur2 = random_int(0, 100);
+
+$bonusJoueur1 = random_int(0, 1);
+$bonusJoueur2 = random_int(0, 1);
+
+echo "joueur 1: $scoreJoueur1\n";
+echo " et joueur 2: $scoreJoueur2\n";
+echo " avec bonus joueur 1: $bonusJoueur1\n";
+echo " et bonus joueur 2: $bonusJoueur2\n";
+
+// si les deux joueurs ont plus de 50 points
+// ou  si un des deux joueurs a attrapé un bonus
+// ils peuvent passer au niveau supérieur
+// sinon : game over
+echo "<br />\n";
+
+if(($scoreJoueur1 > 50 && $scoreJoueur2 > 50) || $bonusJoueur1 == 1 || $bonusJoueur2 == 1) {
+  echo "Level ++\n";
+} else {
+  echo "GAME OVER !!!\n";
+}
+
+echo "<br />\n";
+
+$i = random_int(1, 10);
+$j = random_int(1, 10);
+
+echo "i == $i\n";
+echo " et j == $j\n";
+
+echo "<br />\n";
+
+// i > 5 et j > 5 sinon i > 5 et j < 5
+// i < 5 et j > 5 sinon i < 5 et j < 5
+
+if($i > 5) {
+  if($j > 5) {
+    echo "i et j sont plus grands que 5";
+  } else {
+    echo "i est seulement plus grand que 5";
+  }
+} else {
+  if($j < 5) {
+    echo "i et j sont plus petits que 5";
+  } else {
+    echo "j est seulement plus grand que 5";
+  }
+}
