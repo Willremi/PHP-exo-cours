@@ -25,3 +25,27 @@ foreach($myArray as $key => $value){
   echo $value;
   echo '<br />';
 }
+
+// Création d'un tableau avec clés alphanumériques
+$myArray2 = [
+  "abc" => 123,
+  "def" => 456,
+  "ghi" => 789,
+];
+
+//Ajout de données avec clé alphanumérique
+$myArray2["jkl"] = 123;
+
+//Modification de données avec clé alphanumérique
+$myArray2["jkl"] = 42;
+
+// suppression de données avec une clé alphanumérique
+unset($myArray2["def"]);
+
+// Lecture du tableau ave une boucle foreach
+foreach($myArray2 as $key => $value){
+  echo $key;
+  echo '<br />';
+  echo $value;
+  echo '<br />';
+}
