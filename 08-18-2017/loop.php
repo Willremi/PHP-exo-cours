@@ -23,4 +23,4 @@ echo '<br />';
 // ajoutez-y 100 tableaux ayant la structure suivante :
 // - une clé "word" contenant un des 50 mots du tableau $words sélectionné au hasard
 // - une clé "count" contenant une valeur aléatoire comprises entre 0 et 10
-$words = ["Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "Phasellus", "nibh", "elit", "hendrerit", "consequat", "auctor", "vel", "consectetur", "ac", "mauris", "Proin", "non", "sagittis", "dolor", "et", "rhoncus", "mauris", "Duis", "ac", "finibus", "libero", "Donec", "at", "laoreet", "enim", "convallis", "fringilla", "lectu", "Nulla", "vitae", "viverra", "erat", "ut", "faucibus", "nisi", "Nam", "sed", "commodo", "enim", "Mauris", "ac", "augue",];
+$words = ["proin", "fermentum", "leo", "vel", "orci", "porta", "non", "pulvinar", "neque", "laoreet", "suspendisse", "interdum", "consectetur", "libero", "id", "faucibus", "nisl", "tincidunt", "eget", "nullam", "non", "nisi", "est", ];
