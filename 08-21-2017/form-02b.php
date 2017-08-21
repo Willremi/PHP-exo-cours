@@ -14,8 +14,8 @@ if($_POST){
 if(isset($_POST['url'])) {
   $url = $_POST['url'];
 }
-if(isset($_POST['tags[]'])) {
-  $tags = $_POST['tags[]'];
+if(isset($_POST['tags'])) {
+  $tags = $_POST['tags'];
 }
 }
 
@@ -27,6 +27,14 @@ if(isset($_POST['tags[]'])) {
      <title></title>
    </head>
    <body>
-     <div><?=htmlentities($url)?></div>
+     <div>url: <?=htmlentities($url)?></div>
+     <div>tags: </div>
+     <ul>
+       <?php
+        foreach ($tags as $key => $value) {
+          echo '<li>' . htmlentities($value) . '</li>';
+        }
+        ?>
+     </ul>
    </body>
  </html>
