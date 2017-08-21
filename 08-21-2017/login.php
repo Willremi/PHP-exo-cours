@@ -24,9 +24,9 @@ Récupérer ces données côté php puis :
       $Mdp = $_POST['Mdp'];
     }
     if ($login == 'toto' && $Mdp == 123) {
-      $message = "Bienvenu !";
+      $message = 'Bienvenue !';
     } else {
-      $message = "Erreur, le login ou le mot de passe est erroné";
+      $message = 'Erreur, le login ou le mot de passe est erroné';
     }
   }
  ?>
@@ -38,12 +38,18 @@ Récupérer ces données côté php puis :
     <title></title>
   </head>
   <body>
-    <div><?= htmlentities($messages) ?></div>
+    <div><?= htmlentities($message) ?></div>
+
     <form action="login.php" method="post">
       <input type="text" name="login" value="<?=htmlentities($login) ?>" placeholder="login" />
       <input type="password" name="Mdp" value="<?=htmlentities($Mdp) ?>" placeholder="Mot de passe" />
       <input type="submit" value="Envoyer" />
     </form>
-
+    <script>
+      var message = '<?= addslashes($message) ?>';
+      if (message) {
+        alert(message);
+      }
+    </script>
   </body>
 </html>
