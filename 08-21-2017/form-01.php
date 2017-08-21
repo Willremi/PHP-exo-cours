@@ -3,14 +3,14 @@
 $title = '';
 $body = '';
 
-if($_GET){
-// var_dump($_GET);
+if($_POST){
+// var_dump($_POST);
 
-if(isset($_GET['title'])) {
-$title = $_GET['title'];
+if(isset($_POST['title'])) {
+$title = $_POST['title'];
 }
-if(isset($_GET['body'])) {
-$body = $_GET['body'];
+if(isset($_POST['body'])) {
+$body = $_POST['body'];
 }
 }
 
@@ -24,7 +24,7 @@ $body = $_GET['body'];
   </head>
   <body>
 
-    <form action="" method="get">
+    <form action="form-01.php" method="post">
 
       <input type="text" name="title" value="<?=htmlentities($title)?>" placeholder="titre"/><br />
       <textarea name="body" placeholder="texte"><?=htmlentities($body)?></textarea><br />
