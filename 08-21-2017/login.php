@@ -13,37 +13,35 @@ Récupérer ces données côté php puis :
 
   $login = '';
   $Mdp = '';
+  $message = '';
 
   if($_POST){
-  // var_dump($_POST);
-
-  if(isset($_POST['login'])) {
-  $login = $_POST['login'];
-  }
-  if(isset($_POST['Mdp'])) {
-  $Mdp = $_POST['Mdp'];
-  }
-  }
-  if ($login == 'toto' && $Mdp == 123) {
-    echo "Bienvenu";
-  } else if ($login == '' && $Mdp == '') {
-    echo "Vous devez vous identifier";
-  } else {
-    echo "Erreur, le login ou le mot de passe est faux";
+    // var_dump($_POST);
+    if(isset($_POST['login'])) {
+      $login = $_POST['login'];
+    }
+    if(isset($_POST['Mdp'])) {
+      $Mdp = $_POST['Mdp'];
+    }
+    if ($login == 'toto' && $Mdp == 123) {
+      $message = "Bienvenu !";
+    } else {
+      $message = "Erreur, le login ou le mot de passe est erroné";
+    }
   }
  ?>
 
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title></title>
   </head>
   <body>
-
+    <div><?= htmlentities($messages) ?></div>
     <form action="login.php" method="post">
-      <input type="text" name="login" value="<?=htmlentities($login)?>" placeholder="login" />
-      <input type="password" name="Mdp" value="<?=htmlentities($Mdp)?>" placeholder="Mot de passe" />
+      <input type="text" name="login" value="<?=htmlentities($login) ?>" placeholder="login" />
+      <input type="password" name="Mdp" value="<?=htmlentities($Mdp) ?>" placeholder="Mot de passe" />
       <input type="submit" value="Envoyer" />
     </form>
 
